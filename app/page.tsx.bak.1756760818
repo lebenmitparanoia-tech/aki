@@ -1,0 +1,28 @@
+import CountdownSplitReady from '@/components/CountdownSplitReady'
+import AboutAki from '@/components/sections/AboutAki'
+import LiveDemoSection from '@/components/sections/live-demo/LiveDemoSection'
+import DiaryTeaser from '@/components/sections/dev-diary/DiaryTeaser'
+import SplitText from '@/components/ui/SplitText'
+import TypeText from '@/components/ui/TypeText'
+import '@/components/sections/live-demo/live-demo.css'
+
+export default function Page(){
+  return (
+    <main className="container">
+      <header className="hero">
+        <h1 className="hero-title">
+          <TypeText text="Aki – ruhige Tools für schwierige Tage" />
+        </h1>
+        <p className="hero-sub">
+          <SplitText text="Struktur ohne Druck. Hilfe, wenn du sie brauchst." />
+        </p>
+      </header>
+
+      <AboutAki />
+      {/* Restore the original countdown exactly as designed */}
+      <CountdownSplitReady />
+      <LiveDemoSection />
+      <DiaryTeaser />
+    </main>
+  )
+}

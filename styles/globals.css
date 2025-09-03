@@ -1,0 +1,12 @@
+
+
+/* ---- Ops Canvas tokens & accessibility tweaks (v35) ---- */
+:root{
+  --surface: rgba(255,255,255,0.06);
+  --text: #EAF2F6; --muted: #9FB6BF;
+  --accent: #8DD3FF; --ok: #6FE3A1; --warn: #FFD27D; --err: #FF9A9A;
+}
+.ops-card p, .ops-card span, .ops-card div{ color: var(--text); opacity: 1 }
+.ops-card .meta{ color: var(--muted) }
+.section-title{ background: linear-gradient(90deg, #a9b8ff 10%, #c6bfff 45%, #f2cf87 80%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }

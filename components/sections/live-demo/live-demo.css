@@ -1,0 +1,106 @@
+
+:root{
+  --primary:#7bd7ff;
+  --primary-glow: rgba(123,215,255,.48);
+  --text:rgba(255,255,255,.92);
+  --text-muted:rgba(255,255,255,.70);
+  --surface:rgba(255,255,255,.04);
+  --border:rgba(255,255,255,.12);
+  --glass: blur(14px) saturate(120%);
+}
+
+.ld-wrap{ position:relative; display:block; margin: 56px auto 20px; max-width: 1440px; padding: 0 8px }
+
+/* Header centered over grid with stable toggle on the right */
+.ld-head{ position:relative; display:grid; grid-template-columns: 1fr auto 1fr; align-items:end; gap:16px; margin-bottom:10px }
+.ld-head-center{ grid-column:2; text-align:center }
+.ld-head .ld-aki-pill{ grid-column:3; justify-self:end; min-width:260px }
+@media (max-width: 720px){
+  .ld-head{ position:relative; display:grid; grid-template-columns: 1fr auto 1fr; align-items:end; gap:16px; margin-bottom:10px }
+  .ld-head .ld-aki-pill{ justify-self:center }
+}
+
+/* Grid and cards */
+.ld-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap:28px }
+.glass{ background: var(--surface); border:1px solid var(--border); border-radius:16px; padding: 20px; backdrop-filter: var(--glass) }
+.ld-card{ display:flex; flex-direction:column; min-height: 360px; max-width: 640px }
+.ld-card-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px }
+.ld-titleblock{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; min-height: 36px }
+.ld-ico{ width:24px; height:24px; display:inline-grid; place-items:center; border-radius:8px; background: rgba(255,255,255,.06); border:1px solid var(--border) }
+.ld-card-title{ margin:0; font-size:18px }
+.ld-chip{ padding:6px 8px; border-radius:999px; background: rgba(255,255,255,.06); border:1px solid var(--border); font-size:12px }
+
+.ld-body{ flex:1 1 auto; display:flex; flex-direction:column; gap:8px }
+.ld-desc{ color:var(--text-muted); margin:0 }
+
+/* Instruction row */
+.ld-instr{ display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:10px; background: rgba(255,255,255,.05); border:1px solid var(--border) }
+.ld-instr__ico{ width:18px; height:18px }
+.ld-instr__text{ font-weight:700; letter-spacing:.02em }
+
+/* Aki bubble */
+.ld-aki{ display:flex; align-items:center; gap:10px; margin-top:6px; padding:8px 10px; border-radius:12px; background: rgba(255,255,255,.06); border:1px solid var(--border) }
+.ld-aki__img{ width:56px; height:56px; object-fit: contain }
+.ld-aki__content{ display:flex; flex-direction:column }
+.ld-aki__text{ margin:0; font-weight:700 }
+
+/* Animations */
+.bubble-in{ animation: bubbleIn .9s ease-out both }
+.ld-fade{ animation: fadeIn 600ms ease-out both }
+@keyframes bubbleIn{ from{ opacity:0; transform: translateX(-10px) } to{ opacity:1; transform:none } }
+@keyframes fadeIn{ from{ opacity:0; transform: translateY(4px) } to{ opacity:1; transform:none } }
+
+/* Timer */
+.ld-foot{ flex: 0 0 auto; margin-top: 10px }
+.ld-timer{ display:flex; align-items:center; justify-content:space-between; gap:14px }
+.ld-ring{ width:112px; height:112px; border-radius:999px; display:grid; place-items:center; border:1px solid var(--border); background: conic-gradient(var(--primary) 0deg, rgba(255,255,255,.08) 0deg); position: relative }
+.ld-ring__inner{ width:92px; height:92px; border-radius:999px; display:grid; place-items:center; background: rgba(255,255,255,.06); border:1px solid var(--border) }
+.ld-ring__num{ font-size:28px; font-variant-numeric: tabular-nums }
+.ld-ring__label{ font-size:12px; color: var(--text-muted); text-transform:uppercase; letter-spacing:.12em }
+.ld-ring--glow::before{ content:''; position:absolute; inset:-6px; border-radius:inherit; background: radial-gradient(60% 60% at 50% 50%, rgba(123,215,255,.5), transparent); filter: blur(8px); opacity:.9; animation: glowPulse 2.8s ease-in-out infinite }
+@keyframes glowPulse{ 0%,100%{ opacity:.65; filter: blur(8px) } 50%{ opacity: .95; filter: blur(10px) } }
+
+/* Toggle */
+.ld-aki-pill{ display:inline-flex; align-items:center; gap:10px; padding:10px 12px; border-radius:999px; background: var(--surface); border:1px solid var(--border); backdrop-filter: var(--glass); cursor:pointer; user-select:none }
+.ld-aki-pill.on{ box-shadow: inset 0 0 0 1px rgba(123,215,255,.35) }
+.ld-aki-dot{ width:10px; height:10px; background:#6b7f8f; border-radius:999px; box-shadow:0 0 0 6px rgba(107,127,143,.12) }
+.ld-aki-pill.on .ld-aki-dot{ background:#4adc8f; box-shadow:0 0 0 6px rgba(74,220,143,.18) }
+
+/* Done spacing */
+.ld-done{ margin-top: 20px }
+
+/* Noise / Ambience controls */
+.ld-noise{ display:grid; grid-template-columns: auto 1fr; gap:8px 10px; align-items:center; margin:6px 0 8px }
+.ld-noise__label{ color: var(--text-muted); font-size: 13px }
+.ld-noise__select{ background: rgba(255,255,255,.06); border:1px solid var(--border); color: rgba(255,255,255,.92); border-radius:10px; padding:6px 10px; }
+.ld-noise__range{ width:100% }
+
+
+/* Absoluter Toggle: stört die Zentrierung nicht */
+.ld-aki-fab{ position:absolute; right:12px; bottom:-18px; transform: translateY(50%); z-index:2 }
+@media (max-width: 720px){
+  .ld-aki-fab{ position:static; margin:8px auto 0 }
+}
+\n
+/* Header overline + subtle radial highlight */
+.ld-head-center{ position: relative }
+.ld-overline{ text-transform: uppercase; letter-spacing: .18em; font-size: 12px; opacity: .78; margin-bottom: 6px }
+.ld-head-center::before{
+  content:""; position:absolute; left:50%; transform:translateX(-50%);
+  top:-10px; width: 520px; height: 160px; border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(123,215,255,.12), rgba(123,215,255,0) 70%);
+  filter: blur(14px); pointer-events:none;
+}
+
+/* Segmented control */
+.segmented{ display:flex; flex-wrap:wrap; gap:8px; background: rgba(255,255,255,.04); border:1px solid var(--border); border-radius:12px; padding:6px }
+.segmented__item{ padding:6px 10px; border-radius:10px; border:1px solid transparent; background: transparent; color: var(--text-muted); font-weight:700; cursor:pointer }
+.segmented__item.is-active{ color: var(--text); background: rgba(255,255,255,.08); border-color: var(--border) }
+.segmented__item:focus-visible{ outline:2px solid var(--primary); outline-offset:2px }
+
+/* Range with ticks */
+.ld-noise__range-wrap{ position:relative; padding-bottom: 10px }
+.ld-noise__range{ width:100% }
+.ld-noise__ticks{ position:absolute; left:0; right:0; bottom:2px; height:6px;
+  background: repeating-linear-gradient(to right, rgba(255,255,255,.26), rgba(255,255,255,.26) 1px, transparent 1px, transparent calc((100% - 2px)/10));
+  opacity:.35; border-radius:2px }

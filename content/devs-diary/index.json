@@ -1,0 +1,72 @@
+{
+  "entries": [
+    {
+      "id": "milestone-phase-1-complete",
+      "title": "Phase 1 abgeschlossen",
+      "date": "2025-08-30",
+      "kind": [
+        "Milestone"
+      ],
+      "summary": "Grundlage steht: Live-Schicht, Diary-Seite, Teaser.",
+      "story": "Wir haben die Basis geliefert: Diary, SSE, Filter, Such-UI, Detailseiten. Nächster Schritt: per-Entry OG & MDX-Deep-Dives.",
+      "learned": [
+        "Schmaler Stack bleibt angenehm.",
+        "SSE reicht für unser Tempo.",
+        "Sanfte Motion + A11y vertragen sich gut."
+      ],
+      "tags": [
+        "phase-1"
+      ]
+    },
+    {
+      "id": "closed-beta-prep",
+      "title": "Vorbereitung Closed Beta",
+      "date": "2025-08-29",
+      "kind": [
+        "Changelog"
+      ],
+      "summary": "Basisroutinen stabilisiert, Export-Prototyp gebaut, erste Telemetrie via SSE.",
+      "story": "Wir haben die Routine-Widgets refactored, einen DSGVO-konformen Export-Aufbau skizziert und die Live-Schicht als EventStream angebunden.",
+      "learned": [
+        "Canvas-Sparklines sind mit 2d-Context leicht und performant.",
+        "SSE reicht vollkommen für langsame, zusammengefasste Metriken.",
+        "Offline-Fallbacks geben Sicherheit – 'vor 12 Minuten' ist besser als gar nichts."
+      ],
+      "metrics": {
+        "uptime": 99.982,
+        "p95": 260,
+        "errors": 0.02
+      },
+      "tags": [
+        "beta",
+        "export",
+        "sse"
+      ]
+    },
+    {
+      "id": "kickoff-architecture",
+      "title": "Kickoff & Architektur-Skizze",
+      "date": "2025-08-20",
+      "kind": [
+        "Story",
+        "Deep-Dive"
+      ],
+      "summary": "Warum wir Aki als ruhige PWA bauen – und wie IridescenceOGL als Bühne dient.",
+      "story": "Wir wollten einen Raum schaffen, in dem Technik beruhigt statt überfordert. Darum haben wir die Kernnavigation vereinfacht, Animationen als Motion-Tokens definiert und OGL so getuned, dass er eher atmet als glänzt.",
+      "learned": [
+        "Motion ist nützlich, wenn sie Information trägt – sonst bleibt sie leise.",
+        "Edge-Rendering gibt uns schnelle TTFB, aber Hydration bleibt der Flaschenhals.",
+        "Transparente Defaults zu Datenschutz schaffen Vertrauen schon beim ersten Start."
+      ],
+      "metrics": {
+        "uptime": 99.98,
+        "p95": 280,
+        "errors": 0.03
+      },
+      "tags": [
+        "architecture",
+        "pwa"
+      ]
+    }
+  ]
+}

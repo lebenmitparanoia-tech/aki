@@ -1,0 +1,21 @@
+.wrap {
+  position: sticky;
+  top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 40;
+  pointer-events: none;
+}
+.btn {
+  pointer-events: all;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fff, #e8e8e8);
+  color: #0b1220;
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  font-weight: 700;
+  transition: transform .08s ease, box-shadow .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); box-shadow: 0 2px 12px rgba(0,0,0,0.2); }

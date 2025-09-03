@@ -1,0 +1,49 @@
+
+/* Self-contained styles for CountdownSplitReady (keine globale Anpassung nötig) */
+.countdownSplitReady{ display:grid; gap:16px; grid-template-columns: 1.2fr 1fr; }
+@media (max-width: 980px){ .countdownSplitReady{ grid-template-columns: 1fr; } }
+.card{ background: var(--card, #0f141a); border:1px solid #1b2430; border-radius:16px; padding:24px; }
+
+/* LIVE Pill modern */
+.liveRow{ display:flex; align-items:center; gap:10px; margin-bottom:8px; flex-wrap:wrap }
+.livePill{
+  display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px;
+  background: linear-gradient(90deg,#1f2d40,#172233);
+  border:1px solid #203247; color:#e6f1ff; font-weight:700; letter-spacing:.04em;
+  text-transform: uppercase; font-size:12px;
+}
+.liveDot{ width:8px; height:8px; border-radius:50%; background:#34d399; box-shadow:0 0 8px rgba(52,211,153,.55) }
+.meta{ color:#9aa3b2; font-size:13px }
+.meta.note{ opacity:.85 }
+
+/* Phasenliste mit Bar unter dem Text */
+.phaseList{ list-style:none; margin:0; padding:0; display:grid; gap:14px }
+.phaseHeader{ display:grid; grid-template-columns: 1fr auto; gap:8px; align-items:center }
+.phaseTitle{ font-size:16px; color:#d9e5f6 }
+.phasePct{ font-size:13px; color:#bcd1e8 }
+.bar{ height:10px; border-radius:999px; background:#13202f; overflow:hidden; border:1px solid #1b2a3b; }
+.bar>i{ display:block; height:100%; width:var(--pct,0%); background: linear-gradient(90deg,#84d2ff,#4da3ff); }
+
+.leftFoot{ margin-top:12px; display:grid; gap:4px }
+
+/* Countdown rechts */
+.chips{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:6px }
+.chip{ padding:6px 12px; border-radius:999px; border:1px solid #203247; background:#142132; color:#b7d3ff; }
+.chip.is-active{ background:#1a2b41; border-color:#2c4562; color:#e6f1ff; }
+
+.circleRow{ display:flex; gap:clamp(12px,2vw,20px); flex-wrap:wrap; align-items:center }
+.circleTile{ position:relative; width:132px; height:152px; display:grid; place-items:center }
+.circleLabel{ position:absolute; inset:0; display:grid; place-items:center; pointer-events:none }
+.num{ font-size:24px; font-weight:800; letter-spacing:.02em; }
+.unit{ font-size:12px; color:#9aa3b2; margin-top:88px }
+
+@media (prefers-reduced-motion: reduce){
+  .circleTile circle{ transition:none !important }
+}
+
+.time-rail{ height:8px; border-radius:999px; background:#13202f; overflow:hidden; margin-top:2px }
+.time-rail>i{ display:block; height:100%; width:var(--p,72%); background:#80c9ff }
+
+.milestone{ margin-top:8px; max-width:56ch; color:#cfe3ff }
+.actions{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:4px }
+.badge{ font-size:12px; padding:6px 10px; border-radius:999px; background:#142132; color:#b7d3ff; border:1px solid #203247; }
